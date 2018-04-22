@@ -1,0 +1,43 @@
+{
+  "name": "js-testing-boilerplate",
+  "version": "1.0.0",
+  "description": "Javascript testing boilerplate",
+  "author": "540",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 8.9.0"
+  },
+  "directories": {
+    "src": "src",
+    "test": "test"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-jest": "^22.4.3",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jest": "^21.15.1",
+    "eslint-plugin-prettier": "^2.6.0",
+    "husky": "^0.14.3",
+    "jest": "~22.1.4",
+    "lint-staged": "^7.0.0",
+    "prettier": "^1.11.1",
+    "regenerator-runtime": "^0.11.1"
+  },
+  "scripts": {
+    "lint": "eslint src/**/*.js",
+    "test": "jest -c jest-config.json",
+    "test:watch": "jest -c jest-config.json --watch",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "src/**/*.{js,json,md}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ]
+  }
+}
